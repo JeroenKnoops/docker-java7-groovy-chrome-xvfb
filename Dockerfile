@@ -42,6 +42,10 @@ RUN wget -O /tmp/chromedriver.zip http://chromedriver.storage.googleapis.com/$CH
 RUN unzip /tmp/chromedriver.zip chromedriver -d /usr/bin/
 RUN chmod ugo+rx /usr/bin/chromedriver
 
+# Firefox
+RUN apt-get update && apt-get install -y \
+        firefox
+
 # Dependencies to make "headless" selenium work
 RUN apt-get -y install \
 	gtk2-engines-pixbuf \
