@@ -30,6 +30,12 @@ ENV PATH $GROOVY_HOME/bin:$PATH
 #=========
 # Adding Headless Selenium with Chrome and Firefox
 #=========
+# Firefox
+RUN apt-get install -y -q software-properties-common wget
+RUN add-apt-repository -y ppa:mozillateam/firefox-next
+
+RUN apt-get update && apt-get install -y \
+	firefox
 
 # Chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
